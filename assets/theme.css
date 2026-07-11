@@ -1,0 +1,151 @@
+/* ============================================================
+   Theme công ty — đổi màu nhận diện tại đây, toàn bộ deck ăn theo
+   ============================================================ */
+:root {
+  --brand: #4f46e5;        /* màu chủ đạo */
+  --brand-dark: #312e81;   /* màu chữ trên nền brand-light */
+  --brand-light: #eef2ff;  /* nền nhấn nhạt */
+  --accent: #0d9488;       /* màu phụ (data, thành công) */
+  --accent-dark: #134e4a;
+  --accent-light: #ccfbf1;
+  --ink: #1e293b;          /* chữ chính */
+  --muted: #64748b;        /* chữ phụ */
+  --code-bg: #0f172a;      /* nền khối code */
+}
+
+.reveal {
+  font-family: 'Be Vietnam Pro', 'Segoe UI', system-ui, sans-serif;
+  font-size: 32px;
+  color: var(--ink);
+}
+
+.reveal h1, .reveal h2, .reveal h3 {
+  font-family: inherit;
+  color: var(--ink);
+  text-transform: none;
+  letter-spacing: normal;
+  font-weight: 700;
+}
+.reveal h1 { font-size: 1.9em; }
+.reveal h2 { font-size: 1.35em; margin-bottom: 0.7em; }
+.reveal h2::after {
+  content: '';
+  display: block;
+  width: 64px;
+  height: 5px;
+  margin-top: 12px;
+  border-radius: 3px;
+  background: var(--brand);
+}
+
+.reveal .slides section { text-align: left; }
+.reveal .slides section.center-slide { text-align: center; }
+.reveal .slides section.center-slide h2::after { margin-left: auto; margin-right: auto; }
+
+.reveal ul { display: block; }
+.reveal li { margin: 0.45em 0; line-height: 1.45; }
+.reveal li::marker { color: var(--brand); }
+.reveal strong { color: var(--brand-dark); }
+
+/* Nhãn nhỏ (weekly sharing, tên chuyên mục) */
+.badge {
+  display: inline-block;
+  background: var(--brand-light);
+  color: var(--brand-dark);
+  font-size: 0.55em;
+  font-weight: 500;
+  padding: 6px 20px;
+  border-radius: 999px;
+  margin-bottom: 24px;
+}
+
+.muted { color: var(--muted); }
+.small { font-size: 0.65em; }
+
+/* Bố cục 2 cột: code bên trái, diagram bên phải */
+.cols {
+  display: flex;
+  gap: 44px;
+  align-items: center;
+}
+.cols > * { flex: 1; min-width: 0; }
+
+/* Khối source diagram hiển thị cho khán giả */
+pre.src {
+  background: var(--code-bg);
+  color: #e2e8f0;
+  padding: 20px 26px;
+  border-radius: 12px;
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 0.52em;
+  line-height: 1.55;
+  overflow: auto;
+  box-shadow: none;
+  width: 100%;
+  margin: 0;
+}
+.reveal pre.src code { background: transparent; padding: 0; }
+
+/* Vùng diagram Mermaid sau khi render */
+.mmd { text-align: center; }
+.mmd svg { max-width: 100%; height: auto; }
+.mmd pre { visibility: hidden; }
+
+/* Bảng so sánh */
+.reveal table { font-size: 0.68em; border-collapse: collapse; margin: 0 auto; }
+.reveal table th {
+  background: var(--brand-light);
+  color: var(--brand-dark);
+  font-weight: 700;
+  border: none;
+  padding: 14px 22px;
+}
+.reveal table td {
+  border: none;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 12px 22px;
+}
+.reveal table tr:last-child td { border-bottom: none; }
+td.yes { color: var(--accent); font-weight: 700; }
+td.no  { color: #dc2626; font-weight: 700; }
+
+/* Live editor */
+.live-editor {
+  width: 100%;
+  height: 380px;
+  background: var(--code-bg);
+  color: #e2e8f0;
+  border: none;
+  border-radius: 12px;
+  padding: 20px 24px;
+  font-family: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+  font-size: 0.55em;
+  line-height: 1.6;
+  resize: none;
+}
+.btn {
+  display: inline-block;
+  background: var(--brand);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 32px;
+  font-family: inherit;
+  font-size: 0.6em;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 16px;
+}
+.btn:hover { background: var(--brand-dark); }
+.err {
+  color: #dc2626;
+  font-size: 0.5em;
+  font-family: ui-monospace, Menlo, monospace;
+  text-align: left;
+  white-space: pre-wrap;
+}
+
+/* Thanh tiến trình + điều khiển của reveal theo màu brand */
+.reveal .progress { color: var(--brand); }
+.reveal .controls { color: var(--brand); }
+.reveal .slide-number { color: var(--muted); background: transparent; }

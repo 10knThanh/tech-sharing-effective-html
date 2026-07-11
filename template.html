@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<title>[Chủ đề] — Weekly sharing</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/theme/white.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/monokai.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="assets/theme.css">
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- Title: đổi badge, tiêu đề, người trình bày -->
+<section class="center-slide">
+  <p class="badge">Weekly sharing · [ngày]</p>
+  <h1>[Chủ đề tuần này]</h1>
+  <p class="muted">[Mô tả ngắn một dòng]</p>
+  <p class="small muted" style="margin-top:60px">Người trình bày: [tên]</p>
+</section>
+
+<!-- Slide bullet thường: thêm class="fragment" vào li để hiện từng ý -->
+<section>
+  <h2>[Tiêu đề slide]</h2>
+  <ul>
+    <li class="fragment">Ý thứ nhất</li>
+    <li class="fragment">Ý thứ hai với <strong>nhấn mạnh</strong></li>
+    <li class="fragment">Ý thứ ba</li>
+  </ul>
+  <aside class="notes">Ghi chú cho người trình bày — nhấn S để xem.</aside>
+</section>
+
+<!-- Slide 2 cột: code/nội dung trái, diagram phải -->
+<section>
+  <h2>[Slide có diagram Mermaid]</h2>
+  <div class="cols">
+    <div>
+      <ul>
+        <li>Giải thích bên trái</li>
+      </ul>
+    </div>
+    <div class="mmd"><pre>
+flowchart LR
+  A[Bước 1] --> B[Bước 2]
+  B --> C[Bước 3]
+    </pre></div>
+  </div>
+</section>
+
+<!-- Slide code snippet -->
+<section>
+  <h2>[Slide code]</h2>
+  <pre><code class="language-javascript" data-trim>
+const demo = () => {
+  console.log('Đổi language-javascript theo ngôn ngữ của bạn');
+};
+  </code></pre>
+</section>
+
+<!-- Kết -->
+<section class="center-slide">
+  <h2>Q&amp;A</h2>
+  <p class="muted">Cảm ơn mọi người đã lắng nghe!</p>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/highlight/highlight.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js@5.1.0/plugin/notes/notes.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js"></script>
+<script>
+Reveal.initialize({
+  width: 1100,
+  height: 720,
+  margin: 0.05,
+  hash: true,
+  slideNumber: 'c/t',
+  transition: 'slide',
+  plugins: [RevealHighlight, RevealNotes]
+});
+
+mermaid.initialize({
+  startOnLoad: false,
+  theme: 'base',
+  fontFamily: "'Be Vietnam Pro', sans-serif",
+  themeVariables: {
+    fontSize: '18px',
+    primaryColor: '#eef2ff',
+    primaryBorderColor: '#4f46e5',
+    primaryTextColor: '#312e81',
+    secondaryColor: '#ccfbf1',
+    tertiaryColor: '#f8fafc',
+    lineColor: '#64748b',
+    textColor: '#1e293b'
+  }
+});
+
+document.querySelectorAll('.mmd').forEach(async (el, i) => {
+  const pre = el.querySelector('pre');
+  if (!pre) return;
+  try {
+    const { svg } = await mermaid.render('mmd-' + i, pre.textContent.trim());
+    el.innerHTML = svg;
+  } catch (e) {
+    el.innerHTML = '<div class="err">' + e.message + '</div>';
+  }
+});
+</script>
+</body>
+</html>
