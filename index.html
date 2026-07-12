@@ -74,25 +74,11 @@
     border-left: 2px solid var(--clay); padding-left: 24px; margin-top: 40px; max-width: 560px;
   }
 
-  /* ── warm-up tally ───────────────────────── */
+  /* ── warm-up ─────────────────────────────── */
   .qh {
     font-family: var(--mono); font-size: 11px; letter-spacing: 0.1em;
     text-transform: uppercase; color: var(--muted); font-weight: 500; margin-bottom: 12px;
   }
-  .tally-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 30px; }
-  .tally-grid.tools { grid-template-columns: repeat(4, 1fr); }
-  .tally {
-    background: var(--surface); border: 1px solid var(--line); border-radius: 12px;
-    padding: 14px 16px; cursor: pointer; text-align: left;
-    font-family: var(--sans); transition: border-color .15s ease;
-  }
-  .tally:hover { border-color: var(--muted); }
-  .tally.hit { border-color: var(--clay); }
-  .tally .tl { font-size: 13.5px; color: var(--body); margin-bottom: 6px; }
-  .tally .tn { font-family: var(--serif); font-size: 30px; line-height: 1; color: var(--ink); }
-  .tally.hit .tn { color: var(--clay); }
-  .tools .tally .tl { font-family: var(--mono); font-size: 11.5px; }
-  .tools .tally .tn { font-size: 24px; }
 
   .agenda { list-style: none; margin-top: 44px; max-width: 520px; }
   .agenda li {
@@ -273,7 +259,6 @@
 
   @media (max-width: 760px) {
     .demo-pair, .cmp-wrap, .pros-cons, .int-grid { grid-template-columns: 1fr; }
-    .tally-grid, .tally-grid.tools { grid-template-columns: repeat(2, 1fr); }
     .slide { height: auto; min-height: 100vh; }
   }
 </style>
@@ -293,31 +278,24 @@
 </section>
 
 <!-- ════════ 1b. Warm-up ════════ -->
-<section class="slide wide" id="s-warmup">
+<section class="slide" id="s-warmup">
   <div class="slide-inner">
     <div class="eyebrow">Warm-up · hỏi nhanh cả nhà</div>
     <h2>Trước khi bắt đầu…</h2>
-    <div class="qh">Câu 1 — Bạn có vẽ diagram khi làm việc không?</div>
-    <div class="tally-grid" id="q1">
-      <button class="tally"><div class="tl">Thường xuyên</div><div class="tn">0</div></button>
-      <button class="tally"><div class="tl">Thỉnh thoảng</div><div class="tn">0</div></button>
-      <button class="tally"><div class="tl">Hầu như không</div><div class="tn">0</div></button>
+    <div class="qh">Câu 1</div>
+    <p class="quote" style="margin-top:0; margin-bottom:48px">Bạn có hay vẽ diagram khi làm việc không?</p>
+    <div class="qh">Câu 2</div>
+    <p class="quote" style="margin-top:0">Bạn đang vẽ bằng công cụ nào?</p>
+    <div class="pills" style="margin-top:26px">
+      <span class="pill">Draw.io</span>
+      <span class="pill">Figma</span>
+      <span class="pill">Excalidraw</span>
+      <span class="pill">PowerPoint</span>
+      <span class="pill">Mermaid</span>
+      <span class="pill">Giấy · whiteboard</span>
+      <span class="pill">Khác?</span>
     </div>
-    <div class="qh">Câu 2 — Đang vẽ bằng công cụ nào?</div>
-    <div class="tally-grid tools" id="q2">
-      <button class="tally"><div class="tl">Draw.io</div><div class="tn">0</div></button>
-      <button class="tally"><div class="tl">Figma</div><div class="tn">0</div></button>
-      <button class="tally"><div class="tl">Excalidraw</div><div class="tn">0</div></button>
-      <button class="tally"><div class="tl">PowerPoint</div><div class="tn">0</div></button>
-      <button class="tally"><div class="tl">Mermaid</div><div class="tn">0</div></button>
-      <button class="tally"><div class="tl">Giấy · whiteboard</div><div class="tn">0</div></button>
-      <button class="tally"><div class="tl">Khác</div><div class="tn">0</div></button>
-      <button class="chip" id="tallyReset" style="align-self:center; justify-self:start">Reset</button>
-    </div>
-    <div class="footnote">
-      Mời mọi người giơ tay — bấm vào ô để đếm (+1 mỗi lần bấm).
-      Giữ con số này trong đầu: phần tiếp theo nói về chính những công cụ đó.
-    </div>
+    <div class="footnote">Giữ câu trả lời trong đầu — phần tiếp theo nói về chính những công cụ đó.</div>
   </div>
 </section>
 
@@ -713,23 +691,6 @@ npx skills add plannotator/effective-html <span class="tag">\</span>
     }, { threshold: 0.6 });
 
     slides.forEach(function (s) { obs.observe(s); });
-  })();
-
-  // Warm-up: đếm tay giơ
-  (function () {
-    document.querySelectorAll('.tally').forEach(function (t) {
-      t.addEventListener('click', function () {
-        const n = t.querySelector('.tn');
-        n.textContent = parseInt(n.textContent, 10) + 1;
-        t.classList.add('hit');
-      });
-    });
-    document.getElementById('tallyReset').addEventListener('click', function () {
-      document.querySelectorAll('.tally').forEach(function (t) {
-        t.querySelector('.tn').textContent = '0';
-        t.classList.remove('hit');
-      });
-    });
   })();
 
   // helpers dựng flow bằng HTML
