@@ -2,6 +2,7 @@
 
 > Slide: https://10knthanh.github.io/tech-sharing-effective-html/
 > Demo project: `SharingPresent/simple-auth-demo`
+> Ngày: **16/07/2026**
 
 ---
 
@@ -35,7 +36,8 @@ Nói: *"Hôm nay mình chia sẻ một cách làm diagram mà không cần kéo 
 
 ### Slide 3 — Agenda (2:30 → 2:45)
 
-Lướt nhanh, chỉ nói: *"15 phút, phần dài nhất là live demo."*
+Lướt nhanh, chỉ nói: *"15 phút, phần dài nhất là live demo — gồm cả highlight multi-flow."*
+Không nhắc lại khởi động (vừa xong rồi).
 
 ### Slide 4 — Why (2:45 → 4:15)
 
@@ -61,34 +63,36 @@ Lướt nhanh, chỉ nói: *"15 phút, phần dài nhất là live demo."*
 - Chỉ quy trình: *"bước 'sửa diagram' nằm ngay trong luồng làm việc, không phải việc làm thêm cuối sprint"*
 - Chuyển cảnh: *"Nói suông không tin được — demo từ con số 0 luôn."* → **chuyển sang terminal**
 
-### Slide 8 → Live demo thật (7:45 → 11:45) — xem phần script bên dưới
+### Slide 8 → Live demo thật (7:45 → 11:30) — xem phần script bên dưới
 
 Slide 8 (Prompt → diagram → git diff) dùng làm **bản đồ 3 bước** trước khi rời slide,
 và là **phao cứu sinh** nếu demo thật trục trặc — quay lại slide, bấm 3 chip kể chuyện.
 Khán giả vừa xem slide Tích hợp nên demo chính là "chạy thật" quy trình đó.
 
-### Slide 9 — So sánh (11:45 → 12:30)
+### Slide 9 — Highlight multi-flow ⭐ (11:30 → 12:45) — **điểm ăn tiền, ngay sau demo**
 
-- Đừng đọc cả bảng — chỉ vào 3 hàng: **Review trên PR**, **Highlight flow** (chỉ Effective HTML có ✓) và **Xuất PNG/PDF** (hàng duy nhất Effective HTML thua — dẫn sang slide sau)
-- Summary bên phải: *"Không phải thay thế tất cả — Draw.io cho business, Mermaid cho flowchart nhỏ, Effective HTML cho tài liệu kỹ thuật."*
+Khi live demo xong (diagram đã hiện trong browser), khán giả đã thấy hình dạng “diagram = code”.
+Ngay lúc đó đưa họ xem USP mà tool kéo thả khó bắt chước:
 
-### Slide 10 — Giới hạn (12:30 → 13:00)
+1. Để "Toàn cảnh": *"Một diagram, ba flow chồng chéo — chỗ này tool kéo thả bó tay."*
+2. Bấm **Login flow** → đường sáng chạy: *"chỉ flow login sáng lên, phần còn lại mờ đi nhưng không mất."*
+3. Bấm **Coupon flow** → *"thấy ngay nó đi qua Redis và Database dùng chung."*
+4. Bấm **Mall refund flow** → *"nhánh Notification của riêng nó."*
+5. Chốt: *"Tất cả chỉ là vài dòng CSS — đây là lý do mình chọn Effective HTML thay vì chỉ xuất ảnh tĩnh."*
+
+### Slide 10 — So sánh (12:45 → 13:20)
+
+- Đừng đọc cả bảng — chỉ vào 3 hàng: **Review trên PR**, **Highlight flow** (chỉ Effective HTML có ✓ — vừa demo xong) và **Xuất PNG/PDF** (hàng duy nhất Effective HTML thua — dẫn sang slide sau)
+- Summary bên phải: *"Không phải thay thế tất cả — Draw.io cho business, Mermaid cho flowchart nhỏ (dùng song song), Effective HTML khi cần custom / interactive / nhiều flow chồng chéo."*
+
+### Slide 11 — Giới hạn (13:20 → 13:50)
 
 - Nói thẳng 2 giới hạn: **sơ đồ rất lớn** (AI lo bố cục cho diagram cỡ tài liệu, nhưng vài chục node chằng chịt thì AI ước lượng toạ độ chứ không phải engine auto-routing — mỗi lần chỉnh là một vòng prompt) và **xuất ảnh tĩnh không chuyên** (dán Confluence/slide cho non-engineer vẫn là đất của Draw.io/Excalidraw)
 - Nếu bị hỏi "AI lo layout rồi thì sao còn là giới hạn?": trả lời bằng chính ý trên — AI ước lượng, không tối ưu; sơ đồ nhỏ thì không sao, sơ đồ khổng lồ thì chia nhỏ theo domain
 - Câu dẫn: *"Không có tool nào thắng tất cả — quan trọng là đúng việc. Nói thẳng giới hạn để mọi người chọn đúng."*
 - Slide này giúp bạn ghi điểm khách quan trước Q&A
 
-### Slide 11 — Ví dụ thực tế · highlight flow (13:00 → 14:15) ⭐
-
-**Điểm ăn tiền — thao tác chậm thôi:**
-1. Để "Toàn cảnh": *"Một diagram, ba flow chồng chéo — chỗ này tool kéo thả bó tay."*
-2. Bấm **Login flow** → đường sáng chạy: *"chỉ flow login sáng lên, phần còn lại mờ đi nhưng không mất."*
-3. Bấm **Coupon flow** → *"thấy ngay nó đi qua Redis và Database dùng chung."*
-4. Bấm **Mall refund flow** → *"nhánh Notification của riêng nó."*
-5. Chốt: *"Tất cả chỉ là vài dòng CSS."*
-
-### Slide 12 — Tổng kết (14:15 → 14:45)
+### Slide 12 — Tổng kết (13:50 → 14:20)
 
 Đọc chậm 4 dòng. Dòng cuối nhìn cả phòng: *"— chính là chúng ta."*
 
@@ -98,7 +102,7 @@ Mở source repo slide cho ai muốn xem: `github.com/10knThanh/tech-sharing-eff
 
 ---
 
-## 🖥️ Script live demo (7:45 → 11:45)
+## 🖥️ Script live demo (7:45 → 11:30)
 
 ### Bước 0 — Cho xem app (30s)
 
@@ -144,7 +148,8 @@ Refresh → done. (Nếu dư thời gian, chạy thêm prompt MFA.)
 git add docs && git diff --staged --stat
 ```
 
-Nói: *"Diagram cũng chỉ là source code. Review qua PR như mọi thay đổi khác — đúng quy trình slide Tích hợp vừa chiếu."* → quay lại slide 9.
+Nói: *"Diagram cũng chỉ là source code. Review qua PR như mọi thay đổi khác — đúng quy trình slide Tích hợp vừa chiếu."*
+→ quay lại slide: bản đồ 3 bước (nếu cần) → **ngay sang slide highlight multi-flow**.
 
 ### 🛟 Fallback nếu AI chậm/lỗi
 

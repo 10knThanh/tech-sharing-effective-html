@@ -256,7 +256,7 @@
 <!-- ════════ 1. Title ════════ -->
 <section class="slide" id="s1">
   <div class="slide-inner">
-    <div class="eyebrow">Tech sharing · 15 phút · 07/07/2026 · ThanhND</div>
+    <div class="eyebrow">Tech sharing · 15 phút · 16/07/2026 · ThanhND</div>
     <h1>Effective HTML</h1>
     <p class="subtitle" style="font-family:var(--serif); font-size:24px; margin-bottom:16px">Một cách mới để xây dựng diagram kỹ thuật</p>
   </div>
@@ -287,16 +287,15 @@
 <section class="slide" id="s2">
   <div class="slide-inner">
     <div class="eyebrow">Nội dung</div>
-    <h2>8 phần</h2>
+    <h2>7 phần</h2>
     <ul class="agenda">
-      <li><span>1 · Khởi động — mọi người đang vẽ diagram thế nào?</span></li>
-      <li><span>2 · Vì sao cần một cách vẽ diagram mới?</span></li>
-      <li><span>3 · Effective HTML là gì?</span></li>
-      <li><span>4 · AI + Effective HTML</span></li>
-      <li><span>5 · Tích hợp vào project thực tế</span></li>
-      <li><span>6 · Demo trực tiếp</span></li>
-      <li><span>7 · So sánh &amp; giới hạn</span></li>
-      <li><span>8 · Tổng kết &amp; hỏi đáp</span></li>
+      <li><span>1 · Vì sao cần một cách vẽ diagram mới?</span></li>
+      <li><span>2 · Effective HTML là gì?</span></li>
+      <li><span>3 · AI + Effective HTML</span></li>
+      <li><span>4 · Tích hợp vào project thực tế</span></li>
+      <li><span>5 · Demo — prompt, git diff &amp; highlight multi-flow</span></li>
+      <li><span>6 · So sánh &amp; giới hạn</span></li>
+      <li><span>7 · Tổng kết &amp; hỏi đáp</span></li>
     </ul>
   </div>
 </section>
@@ -368,7 +367,7 @@
       <span class="pill ok">Diff từng dòng</span>
       <span class="pill ok">Review trên PR</span>
       <span class="pill ok">Tái sử dụng component</span>
-      <span class="pill ok">Tuỳ biến không giới hạn</span>
+      <span class="pill ok">Tuỳ biến bằng HTML/CSS</span>
       <span class="pill ok">Highlight từng flow</span>
     </div>
     <div class="footnote">github.com/plannotator/effective-html — MIT license. Chính bộ slide này là một file Effective HTML.</div>
@@ -460,7 +459,7 @@ npx skills add plannotator/effective-html <span class="tag">\</span>
 <!-- ════════ 6. Live demo ════════ -->
 <section class="slide wide" id="s6">
   <div class="slide-inner">
-    <div class="eyebrow">5 · Demo trực tiếp · kịch bản 3 bước</div>
+    <div class="eyebrow">5 · Demo · bản đồ 3 bước</div>
     <h2>Prompt → diagram → git diff</h2>
     <div class="chips" id="demochips">
       <button class="chip on" data-s="gen">1 · Sinh login flow</button>
@@ -477,65 +476,10 @@ npx skills add plannotator/effective-html <span class="tag">\</span>
   </div>
 </section>
 
-<!-- ════════ 7. Comparison ════════ -->
-<section class="slide wide" id="s7">
-  <div class="slide-inner">
-    <div class="eyebrow">6 · So sánh</div>
-    <h2>Effective HTML và các công cụ khác</h2>
-    <div class="cmp-wrap">
-      <table class="cmp">
-        <thead>
-          <tr><th></th><th class="hl">Effective HTML</th><th>Draw.io</th><th>Mermaid</th><th>Excalidraw</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Viết bằng code</td><td class="hl yes">✓</td><td class="no">✕</td><td class="yes">✓</td><td class="no">✕</td></tr>
-          <tr><td>Thân thiện với Git</td><td class="hl yes">✓</td><td class="no">✕</td><td class="yes">✓</td><td class="no">✕</td></tr>
-          <tr><td>Review trên PR</td><td class="hl yes">✓</td><td class="no">✕</td><td class="yes">✓</td><td class="no">✕</td></tr>
-          <tr><td>AI sinh diagram</td><td class="hl yes">✓</td><td class="part">△</td><td class="yes">✓</td><td class="part">△</td></tr>
-          <tr><td>Tuỳ biến HTML/CSS</td><td class="hl yes">✓</td><td class="no">✕</td><td class="no">✕</td><td class="no">✕</td></tr>
-          <tr><td>Highlight flow</td><td class="hl yes">✓</td><td class="no">✕</td><td class="no">✕</td><td class="no">✕</td></tr>
-          <tr><td>Xuất PNG / PDF</td><td class="hl part">△</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
-          <tr><td>Độ khó học</td><td class="hl">Trung bình</td><td>Dễ</td><td>Dễ</td><td>Dễ</td></tr>
-        </tbody>
-      </table>
-      <ul class="sum-list">
-        <li><div class="st">Draw.io</div><div class="sd">Mạnh cho business user, vẽ nhanh kéo thả</div></li>
-        <li><div class="st">Mermaid</div><div class="sd">Mạnh cho flowchart đơn giản trong README</div></li>
-        <li><div class="st">Effective HTML</div><div class="sd">Mạnh cho tài liệu kỹ thuật của engineer</div></li>
-      </ul>
-    </div>
-    <div class="footnote">✓ tốt · △ làm được nhưng không chuyên · ✕ không hỗ trợ</div>
-  </div>
-</section>
-
-<!-- ════════ 8b. Giới hạn ════════ -->
-<section class="slide" id="s8b">
-  <div class="slide-inner">
-    <div class="eyebrow">6 · So sánh (tiếp) · nói thẳng</div>
-    <h2>Giới hạn của Effective HTML</h2>
-    <ul class="prob-list">
-      <li class="prob-item">
-        <span class="prob-dot"></span>
-        <div><div class="prob-title">Sơ đồ rất lớn vẫn là điểm yếu</div>
-        <div class="prob-desc">Bố cục đã có AI lo — với diagram cỡ tài liệu (10–20 node) là quá đủ. Nhưng sơ đồ vài chục node chằng chịt thì AI ước lượng toạ độ, không phải engine auto-routing tối ưu đường nối như Draw.io: mỗi lần chỉnh là một vòng prompt và phải soát lại bằng mắt.</div></div>
-      </li>
-      <li class="prob-item">
-        <span class="prob-dot"></span>
-        <div><div class="prob-title">Xuất ảnh tĩnh không chuyên</div>
-        <div class="prob-desc">Cần PNG/PDF để dán vào Confluence hay slide cho non-engineer thì phải in trang hoặc chụp màn hình — Draw.io, Excalidraw làm việc này tốt hơn hẳn.</div></div>
-      </li>
-    </ul>
-    <div class="footnote">
-      Cách giảm đau: chia sơ đồ lớn thành nhiều diagram nhỏ theo domain (mỗi diagram một câu chuyện) ·
-      việc cần kéo thả nhanh hay xuất ảnh thì Draw.io vẫn ở đó — đúng việc của nó.
-    </div>
-  </div>
-</section>
-
-<!-- ════════ 10. Real examples: 1 diagram, nhiều flow chồng chéo ════════ -->
+<!-- ════════ 6b. Điểm ăn tiền: highlight multi-flow (ngay trong cụm demo) ════════ -->
 <section class="slide wide" id="s10">
   <div class="slide-inner">
-    <div class="eyebrow">Ví dụ thực tế · điểm ăn tiền: highlight flow</div>
+    <div class="eyebrow">5 · Demo (tiếp) · điểm ăn tiền: highlight flow</div>
     <h2>Một diagram — ba flow chồng chéo</h2>
     <div class="chips" id="flowchips">
       <button class="chip on" data-f="all">Toàn cảnh</button>
@@ -608,6 +552,61 @@ npx skills add plannotator/effective-html <span class="tag">\</span>
       </svg>
     </div>
     <p class="demo-cap" id="flowcap" style="max-width:900px"></p>
+  </div>
+</section>
+
+<!-- ════════ 7. Comparison ════════ -->
+<section class="slide wide" id="s7">
+  <div class="slide-inner">
+    <div class="eyebrow">6 · So sánh</div>
+    <h2>Effective HTML và các công cụ khác</h2>
+    <div class="cmp-wrap">
+      <table class="cmp">
+        <thead>
+          <tr><th></th><th class="hl">Effective HTML</th><th>Draw.io</th><th>Mermaid</th><th>Excalidraw</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Viết bằng code</td><td class="hl yes">✓</td><td class="no">✕</td><td class="yes">✓</td><td class="no">✕</td></tr>
+          <tr><td>Thân thiện với Git</td><td class="hl yes">✓</td><td class="no">✕</td><td class="yes">✓</td><td class="no">✕</td></tr>
+          <tr><td>Review trên PR</td><td class="hl yes">✓</td><td class="no">✕</td><td class="yes">✓</td><td class="no">✕</td></tr>
+          <tr><td>AI sinh diagram</td><td class="hl yes">✓</td><td class="part">△</td><td class="yes">✓</td><td class="part">△</td></tr>
+          <tr><td>Tuỳ biến HTML/CSS</td><td class="hl yes">✓</td><td class="no">✕</td><td class="no">✕</td><td class="no">✕</td></tr>
+          <tr><td>Highlight flow</td><td class="hl yes">✓</td><td class="no">✕</td><td class="no">✕</td><td class="no">✕</td></tr>
+          <tr><td>Xuất PNG / PDF</td><td class="hl part">△</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Độ khó học</td><td class="hl">Trung bình</td><td>Dễ</td><td>Dễ</td><td>Dễ</td></tr>
+        </tbody>
+      </table>
+      <ul class="sum-list">
+        <li><div class="st">Draw.io</div><div class="sd">Mạnh cho business user, vẽ nhanh kéo thả</div></li>
+        <li><div class="st">Mermaid</div><div class="sd">Flowchart nhỏ trong README — dùng song song, không thay thế</div></li>
+        <li><div class="st">Effective HTML</div><div class="sd">Tài liệu kỹ thuật cần custom, interactive, nhiều flow chồng chéo</div></li>
+      </ul>
+    </div>
+    <div class="footnote">✓ tốt · △ làm được nhưng không chuyên · ✕ không hỗ trợ</div>
+  </div>
+</section>
+
+<!-- ════════ 8b. Giới hạn ════════ -->
+<section class="slide" id="s8b">
+  <div class="slide-inner">
+    <div class="eyebrow">6 · So sánh (tiếp) · nói thẳng</div>
+    <h2>Giới hạn của Effective HTML</h2>
+    <ul class="prob-list">
+      <li class="prob-item">
+        <span class="prob-dot"></span>
+        <div><div class="prob-title">Sơ đồ rất lớn vẫn là điểm yếu</div>
+        <div class="prob-desc">Bố cục đã có AI lo — với diagram cỡ tài liệu (10–20 node) là quá đủ. Nhưng sơ đồ vài chục node chằng chịt thì AI ước lượng toạ độ, không phải engine auto-routing tối ưu đường nối như Draw.io: mỗi lần chỉnh là một vòng prompt và phải soát lại bằng mắt.</div></div>
+      </li>
+      <li class="prob-item">
+        <span class="prob-dot"></span>
+        <div><div class="prob-title">Xuất ảnh tĩnh không chuyên</div>
+        <div class="prob-desc">Cần PNG/PDF để dán vào Confluence hay slide cho non-engineer thì phải in trang hoặc chụp màn hình — Draw.io, Excalidraw làm việc này tốt hơn hẳn.</div></div>
+      </li>
+    </ul>
+    <div class="footnote">
+      Cách giảm đau: chia sơ đồ lớn thành nhiều diagram nhỏ theo domain (mỗi diagram một câu chuyện) ·
+      việc cần kéo thả nhanh hay xuất ảnh thì Draw.io vẫn ở đó — đúng việc của nó.
+    </div>
   </div>
 </section>
 
