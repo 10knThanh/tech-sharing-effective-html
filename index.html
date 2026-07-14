@@ -386,11 +386,11 @@ npx skills add plannotator/effective-html <span class="tag">\</span>
     --skill html-diagram</pre>
         <div class="prompt-box" style="margin-top:16px">
           <div class="plabel">Prompt</div>
-          <div class="ptext">"Draw a login sequence diagram."</div>
+          <div class="ptext">"Create architecture for this auth project."</div>
         </div>
         <div class="prompt-box" style="margin-top:10px">
           <div class="plabel">Prompt</div>
-          <div class="ptext">"Generate AWS architecture."</div>
+          <div class="ptext">"Add payment checkout sequence diagram."</div>
         </div>
       </div>
       <div>
@@ -422,11 +422,14 @@ npx skills add plannotator/effective-html <span class="tag">\</span>
         <h3>Cấu trúc repo</h3>
         <pre class="code">docs/
   architecture/
-    login.html
-    payment.html
-    coupon-flow.html
+    overview.html
   sequence/
-  deployment/</pre>
+    register.html
+    login.html
+    forgot-password.html
+    payment.html
+  assets/
+    diagram.css</pre>
         <h3 style="margin-top:24px">Tích hợp với</h3>
         <div class="pills">
           <span class="pill">GitHub</span>
@@ -459,11 +462,11 @@ npx skills add plannotator/effective-html <span class="tag">\</span>
 <!-- ════════ 6. Live demo ════════ -->
 <section class="slide wide" id="s6">
   <div class="slide-inner">
-    <div class="eyebrow">5 · Demo · bản đồ 3 bước</div>
+    <div class="eyebrow">5 · Demo · SimpleAuth · bản đồ 3 bước</div>
     <h2>Prompt → diagram → git diff</h2>
     <div class="chips" id="demochips">
-      <button class="chip on" data-s="gen">1 · Sinh login flow</button>
-      <button class="chip" data-s="redis">2 · Thêm Redis Cache</button>
+      <button class="chip on" data-s="gen">1 · Sinh architecture</button>
+      <button class="chip" data-s="pay">2 · Thêm Payment</button>
       <button class="chip" data-s="diff">3 · git diff</button>
     </div>
     <div class="demo-pair">
@@ -480,15 +483,15 @@ npx skills add plannotator/effective-html <span class="tag">\</span>
 <section class="slide wide" id="s10">
   <div class="slide-inner">
     <div class="eyebrow">5 · Demo (tiếp) · điểm ăn tiền: highlight flow</div>
-    <h2>Một diagram — ba flow chồng chéo</h2>
+    <h2>Một diagram — ba flow SimpleAuth</h2>
     <div class="chips" id="flowchips">
       <button class="chip on" data-f="all">Toàn cảnh</button>
       <button class="chip" data-f="login">Login flow</button>
-      <button class="chip" data-f="coupon">Coupon flow</button>
-      <button class="chip" data-f="refund">Mall refund flow</button>
+      <button class="chip" data-f="forgot">Forgot password</button>
+      <button class="chip" data-f="payment">Payment flow</button>
     </div>
     <div class="stage" id="flowstage2">
-      <svg viewBox="0 0 1200 580" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Một sơ đồ hệ thống chứa ba flow login, coupon, refund chồng chéo — highlight được từng flow">
+      <svg viewBox="0 0 1200 580" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Sơ đồ SimpleAuth: login, forgot password và payment chồng chéo — highlight được từng flow">
         <defs>
           <marker id="am" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6.5" markerHeight="6.5" orient="auto-start-reverse">
             <path d="M0,0 L10,5 L0,10 z" style="fill: var(--muted)"/>
@@ -509,10 +512,10 @@ npx skills add plannotator/effective-html <span class="tag">\</span>
         <path class="edge" id="f-e9"  d="M760,448 C 805,420 805,352 846,322"/>
         <path class="edge" id="f-e10" d="M760,478 L846,478"/>
 
-        <g class="node client" id="fn-app">
+        <g class="node client" id="fn-browser">
           <rect x="50" y="250" width="170" height="80"/>
-          <text class="t" x="70" y="282">App</text>
-          <text class="m" x="70" y="306">iOS · Android</text>
+          <text class="t" x="70" y="282">Browser</text>
+          <text class="m" x="70" y="306">Web Frontend</text>
         </g>
         <g class="node svc" id="fn-gw">
           <rect x="290" y="250" width="190" height="80"/>
@@ -522,32 +525,32 @@ npx skills add plannotator/effective-html <span class="tag">\</span>
         <g class="node svc" id="fn-auth">
           <rect x="560" y="70" width="200" height="80"/>
           <text class="t" x="580" y="102">Auth Service</text>
-          <text class="m" x="580" y="126">JWT · refresh token</text>
+          <text class="m" x="580" y="126">JWT · MFA · reset</text>
         </g>
-        <g class="node svc" id="fn-coupon">
+        <g class="node svc" id="fn-email">
           <rect x="560" y="250" width="200" height="80"/>
-          <text class="t" x="580" y="282">Coupon Service</text>
-          <text class="m" x="580" y="306">validate · điều kiện</text>
+          <text class="t" x="580" y="282">Email Service</text>
+          <text class="m" x="580" y="306">verify · reset link</text>
         </g>
-        <g class="node svc" id="fn-refund">
+        <g class="node svc" id="fn-pay">
           <rect x="560" y="430" width="200" height="80"/>
-          <text class="t" x="580" y="462">Refund Service</text>
-          <text class="m" x="580" y="486">gọi payment provider</text>
+          <text class="t" x="580" y="462">Payment Service</text>
+          <text class="m" x="580" y="486">checkout · webhook</text>
         </g>
-        <g class="node data" id="fn-redis">
+        <g class="node svc" id="fn-user">
           <rect x="850" y="70" width="180" height="80"/>
-          <text class="t" x="870" y="102">Redis</text>
-          <text class="m" x="870" y="126">session · double-use</text>
+          <text class="t" x="870" y="102">User Service</text>
+          <text class="m" x="870" y="126">profile · lookup</text>
         </g>
         <g class="node data" id="fn-db">
           <rect x="850" y="250" width="180" height="80"/>
-          <text class="t" x="870" y="282">Database</text>
-          <text class="m" x="870" y="306">user · coupon · refund</text>
+          <text class="t" x="870" y="282">PostgreSQL</text>
+          <text class="m" x="870" y="306">user · token · payment</text>
         </g>
-        <g class="node data" id="fn-notif">
+        <g class="node data" id="fn-pgw">
           <rect x="850" y="430" width="180" height="80"/>
-          <text class="t" x="870" y="462">Notification</text>
-          <text class="m" x="870" y="486">push + email</text>
+          <text class="t" x="870" y="462">Payment Gateway</text>
+          <text class="m" x="870" y="486">Stripe-like</text>
         </g>
       </svg>
     </div>
@@ -631,7 +634,7 @@ npx skills add plannotator/effective-html <span class="tag">\</span>
     <p class="subtitle" style="margin:0 auto">Cảm ơn mọi người đã lắng nghe!</p>
     <div class="footnote">
       github.com/plannotator/effective-html · source bộ slide: SharingPresent/html-diagram/index.html<br>
-      project demo: SimpleAuth — SharingPresent/simple-auth-demo (branch demo-final chứa đủ 4 diagram)
+      project demo: SimpleAuth — SharingPresent/simple-auth-demo (branch demo-final chứa đủ diagram kể cả payment)
     </div>
   </div>
 </section>
@@ -681,41 +684,43 @@ npx skills add plannotator/effective-html <span class="tag">\</span>
   }
   const FA = '<div class="farrow"></div>';
 
-  // Slide 6: kịch bản live demo 3 bước
+  // Slide 6: kịch bản live demo SimpleAuth — 3 bước
   (function () {
     const panel = document.getElementById('demopanel');
     const flow = document.getElementById('demoflow');
     const cap = document.getElementById('democap');
 
-    const LOGIN = fnode('client', 'App', '') + FA
+    const ARCH = fnode('client', 'Browser', '') + FA
+      + fnode('client', 'Web Frontend', '') + FA
       + fnode('svc', 'API Gateway', '') + FA
-      + fnode('svc', 'Authentication Service', '') + FA
-      + fnode('data', 'Database', '');
-    const LOGIN_REDIS = fnode('client', 'App', '') + FA
+      + fnode('svc', 'Auth · User · Email', '') + FA
+      + fnode('data', 'PostgreSQL', '');
+    const ARCH_PAY = fnode('client', 'Browser', '') + FA
+      + fnode('client', 'Web Frontend', '') + FA
       + fnode('svc', 'API Gateway', '') + FA
-      + fnode('svc', 'Authentication Service', '') + FA
-      + fnode('data new', 'Redis Cache', 'node mới thêm') + FA
-      + fnode('data', 'Database', '');
+      + fnode('svc', 'Auth · User · Email', '') + FA
+      + fnode('svc new', 'Payment Service', 'node mới thêm') + FA
+      + fnode('data', 'PostgreSQL', '');
 
     const STEPS = {
       gen: {
-        panel: '<div class="prompt-box"><div class="plabel">Prompt cho AI</div>'
-          + '<div class="ptext">"Create an architecture diagram for a login system."</div></div>',
-        flow: LOGIN,
-        cap: 'AI sinh file docs/architecture/login.html — diagram xuất hiện, không kéo thả một pixel nào.'
+        panel: '<div class="prompt-box"><div class="plabel">Prompt cho AI · SimpleAuth</div>'
+          + '<div class="ptext">"Create an architecture diagram for this authentication project. Put it in docs/architecture/overview.html…"</div></div>',
+        flow: ARCH,
+        cap: 'AI sinh docs/architecture/overview.html (+ shared diagram.css) — diagram xuất hiện, không kéo thả một pixel nào.'
       },
-      redis: {
-        panel: '<div class="prompt-box"><div class="plabel">Prompt tiếp theo</div>'
-          + '<div class="ptext">"Add Redis Cache between API and Database."</div></div>',
-        flow: LOGIN_REDIS,
-        cap: 'Diagram tự cập nhật — AI chỉ chèn thêm một node và một arrow vào đúng chỗ.'
+      pay: {
+        panel: '<div class="prompt-box"><div class="plabel">Prompt tiếp theo · PO đổi yêu cầu</div>'
+          + '<div class="ptext">"Create a sequence diagram for payment / checkout in docs/sequence/payment.html. Add Payment Service to architecture."</div></div>',
+        flow: ARCH_PAY,
+        cap: 'PO: "cần thanh toán sau login" — thêm sequence payment.html + node Payment Service trên overview (class new).'
       },
       diff: {
-        panel: '<pre class="code">$ git diff docs/architecture/login.html\n'
-          + '<span class="add">+ &lt;div class="node data"&gt;Redis Cache&lt;/div&gt;</span>\n'
-          + '<span class="add">+ &lt;div class="arrow"&gt;&lt;/div&gt;</span></pre>',
-        flow: LOGIN_REDIS,
-        cap: 'Chỉ 2 dòng thêm mới — commit, mở PR, reviewer duyệt như duyệt code. Diagram cũng chỉ là source code.'
+        panel: '<pre class="code">$ git diff --stat docs/\n'
+          + '<span class="add">+ docs/sequence/payment.html</span>\n'
+          + '<span class="add">+ &lt;div class="node svc new"&gt;Payment Service&lt;/div&gt;</span></pre>',
+        flow: ARCH_PAY,
+        cap: 'Diff rõ ràng từng dòng — commit, mở PR, reviewer duyệt như duyệt code. Diagram cũng chỉ là source code.'
       }
     };
 
@@ -730,7 +735,7 @@ npx skills add plannotator/effective-html <span class="tag">\</span>
     setDemoStep('gen');
   })();
 
-  // Slide 10: một diagram, nhiều flow chồng chéo — highlight từng flow
+  // Slide 10: SimpleAuth — login / forgot / payment chồng chéo
   (function () {
     const stage = document.getElementById('flowstage2');
     const cap = document.getElementById('flowcap');
@@ -739,21 +744,21 @@ npx skills add plannotator/effective-html <span class="tag">\</span>
     const FLOWS = {
       login: {
         edges: ['f-e1', 'f-e2', 'f-e5', 'f-e6'],
-        nodes: ['fn-app', 'fn-gw', 'fn-auth', 'fn-redis', 'fn-db'],
-        cap: 'Login flow sáng lên: App → Gateway → Auth → Redis (session) + Database. Các flow khác mờ đi nhưng vẫn ở đó — không mất ngữ cảnh.'
+        nodes: ['fn-browser', 'fn-gw', 'fn-auth', 'fn-user', 'fn-db'],
+        cap: 'Login flow: Browser → Gateway → Auth (+ User lookup) → PostgreSQL. Các flow khác mờ đi nhưng vẫn ở đó — không mất ngữ cảnh.'
       },
-      coupon: {
-        edges: ['f-e1', 'f-e3', 'f-e7', 'f-e8'],
-        nodes: ['fn-app', 'fn-gw', 'fn-coupon', 'fn-redis', 'fn-db'],
-        cap: 'Coupon flow đi qua đúng những node dùng chung (Redis chống double-use, Database lưu lịch sử) — thấy ngay nó chạm vào đâu mà không cần vẽ sơ đồ riêng.'
+      forgot: {
+        edges: ['f-e1', 'f-e2', 'f-e3', 'f-e7', 'f-e8'],
+        nodes: ['fn-browser', 'fn-gw', 'fn-auth', 'fn-email', 'fn-db'],
+        cap: 'Forgot password: Auth tạo reset token, Email Service gửi link, PostgreSQL lưu token — thấy ngay Email Service dùng chung hạ tầng với login.'
       },
-      refund: {
+      payment: {
         edges: ['f-e1', 'f-e4', 'f-e9', 'f-e10'],
-        nodes: ['fn-app', 'fn-gw', 'fn-refund', 'fn-db', 'fn-notif'],
-        cap: 'Refund flow: nhánh Notification của riêng nó, Database dùng chung với hai flow kia — một sơ đồ, nhiều góc nhìn.'
+        nodes: ['fn-browser', 'fn-gw', 'fn-pay', 'fn-db', 'fn-pgw'],
+        cap: 'Payment flow: nhánh Payment Service + Payment Gateway (Stripe-like), PostgreSQL dùng chung — đúng những gì vừa demo trong SimpleAuth.'
       }
     };
-    const CAP_ALL = 'Một diagram duy nhất chứa cả ba flow, các đường chồng chéo nhau. Bấm từng chip — làm mờ + làm sáng + animation chỉ bằng vài dòng CSS, điều mà ảnh tĩnh xuất từ tool kéo thả không làm được.';
+    const CAP_ALL = 'Một sơ đồ SimpleAuth chứa login, forgot password và payment chồng chéo. Bấm từng chip — làm mờ + làm sáng + animation bằng CSS, điều mà ảnh tĩnh từ tool kéo thả không làm được.';
 
     function setFlow(name) {
       chips.forEach(c => c.classList.toggle('on', c.dataset.f === name));

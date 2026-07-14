@@ -17,6 +17,7 @@
 - [ ] Mở sẵn `README.md` của simple-auth-demo (chứa toàn bộ prompt — **copy, đừng gõ tay**)
 - [ ] Mở app SimpleAuth thử register/login; muốn demo sạch: DevTools → `localStorage.clear()`
 - [ ] Tăng font terminal + editor (⌘+ vài lần)
+- [ ] Optional: `npm run docs` sau khi có docs — hub có Architecture + Register + Login + Forgot + **Payment**
 
 **Nhớ:** repo là `plannotator` (có "or") — lần trước gõ `plannotat` là fail ngay trên sân khấu đấy 😄
 
@@ -26,7 +27,7 @@
 
 ### Slide 1 — Title (0:00 → 0:30)
 
-Nói: *"Hôm nay mình chia sẻ một cách làm diagram mà không cần kéo thả — viết diagram bằng code, sống trong repo, review qua PR như code."*
+Nói: *"Hôm nay mình chia sẻ một cách làm diagram mà không cần kéo thả — viết diagram bằng code, sống trong repo, review qua PR như code. Demo trên project SimpleAuth."*
 
 ### Slide 2 — Khởi động (0:30 → 2:30)
 
@@ -36,7 +37,7 @@ Nói: *"Hôm nay mình chia sẻ một cách làm diagram mà không cần kéo 
 
 ### Slide 3 — Agenda (2:30 → 2:45)
 
-Lướt nhanh, chỉ nói: *"15 phút, phần dài nhất là live demo — gồm cả highlight multi-flow."*
+Lướt nhanh, chỉ nói: *"15 phút, phần dài nhất là live demo SimpleAuth — gồm cả highlight multi-flow."*
 Không nhắc lại khởi động (vừa xong rồi).
 
 ### Slide 4 — Why (2:45 → 4:15)
@@ -59,50 +60,49 @@ Không nhắc lại khởi động (vừa xong rồi).
 
 ### Slide 7 — Tích hợp vào project (7:00 → 7:45)
 
-- Chỉ cây thư mục: *"diagram nằm cạnh code, đi cùng commit"*
+- Chỉ cây thư mục **đúng SimpleAuth**:
+  `docs/architecture/overview.html` · `sequence/register · login · forgot-password · payment` · `assets/diagram.css`
 - Chỉ quy trình: *"bước 'sửa diagram' nằm ngay trong luồng làm việc, không phải việc làm thêm cuối sprint"*
-- Chuyển cảnh: *"Nói suông không tin được — demo từ con số 0 luôn."* → **chuyển sang terminal**
+- Chuyển cảnh: *"Nói suông không tin được — demo SimpleAuth từ con số 0."* → **chuyển sang terminal**
 
-### Slide 8 → Live demo thật (7:45 → 11:30) — xem phần script bên dưới
+### Slide 8 → Live demo thật (7:45 → 11:15) — xem phần script bên dưới
 
-Slide 8 (Prompt → diagram → git diff) dùng làm **bản đồ 3 bước** trước khi rời slide,
-và là **phao cứu sinh** nếu demo thật trục trặc — quay lại slide, bấm 3 chip kể chuyện.
-Khán giả vừa xem slide Tích hợp nên demo chính là "chạy thật" quy trình đó.
+Slide 8 (Prompt → diagram → git diff) = **bản đồ 3 bước SimpleAuth**:
+1. Sinh architecture → 2. Thêm Payment → 3. git diff  
+Dùng làm **phao cứu sinh** nếu AI trục trặc — quay lại slide, bấm 3 chip kể chuyện.
 
-### Slide 9 — Highlight multi-flow ⭐ (11:30 → 12:45) — **điểm ăn tiền, ngay sau demo**
+### Slide 9 — Highlight multi-flow ⭐ (11:15 → 12:30) — **điểm ăn tiền, ngay sau demo**
 
-Khi live demo xong (diagram đã hiện trong browser), khán giả đã thấy hình dạng “diagram = code”.
-Ngay lúc đó đưa họ xem USP mà tool kéo thả khó bắt chước:
+Khán giả vừa thấy diagram SimpleAuth trong browser. Ngay lúc đó show USP:
 
-1. Để "Toàn cảnh": *"Một diagram, ba flow chồng chéo — chỗ này tool kéo thả bó tay."*
-2. Bấm **Login flow** → đường sáng chạy: *"chỉ flow login sáng lên, phần còn lại mờ đi nhưng không mất."*
-3. Bấm **Coupon flow** → *"thấy ngay nó đi qua Redis và Database dùng chung."*
-4. Bấm **Mall refund flow** → *"nhánh Notification của riêng nó."*
-5. Chốt: *"Tất cả chỉ là vài dòng CSS — đây là lý do mình chọn Effective HTML thay vì chỉ xuất ảnh tĩnh."*
+1. **Toàn cảnh**: *"Một sơ đồ SimpleAuth — login, forgot password, payment chồng chéo."*
+2. **Login flow** → Browser → Gateway → Auth → User / PostgreSQL
+3. **Forgot password** → Auth + Email Service + DB (reset token)
+4. **Payment flow** → Payment Service + Payment Gateway (Stripe-like) + PostgreSQL
+5. Chốt: *"Đúng những service vừa sinh trong demo — tất cả chỉ là vài dòng CSS."*
 
-### Slide 10 — So sánh (12:45 → 13:20)
+### Slide 10 — So sánh (12:30 → 13:05)
 
-- Đừng đọc cả bảng — chỉ vào 3 hàng: **Review trên PR**, **Highlight flow** (chỉ Effective HTML có ✓ — vừa demo xong) và **Xuất PNG/PDF** (hàng duy nhất Effective HTML thua — dẫn sang slide sau)
-- Summary bên phải: *"Không phải thay thế tất cả — Draw.io cho business, Mermaid cho flowchart nhỏ (dùng song song), Effective HTML khi cần custom / interactive / nhiều flow chồng chéo."*
+- Chỉ 3 hàng: **Review trên PR**, **Highlight flow** (vừa demo), **Xuất PNG/PDF** (hàng thua → dẫn slide sau)
+- Summary: *"Draw.io cho business, Mermaid cho flowchart nhỏ (song song), Effective HTML khi cần custom / interactive / nhiều flow."*
 
-### Slide 11 — Giới hạn (13:20 → 13:50)
+### Slide 11 — Giới hạn (13:05 → 13:35)
 
-- Nói thẳng 2 giới hạn: **sơ đồ rất lớn** (AI lo bố cục cho diagram cỡ tài liệu, nhưng vài chục node chằng chịt thì AI ước lượng toạ độ chứ không phải engine auto-routing — mỗi lần chỉnh là một vòng prompt) và **xuất ảnh tĩnh không chuyên** (dán Confluence/slide cho non-engineer vẫn là đất của Draw.io/Excalidraw)
-- Nếu bị hỏi "AI lo layout rồi thì sao còn là giới hạn?": trả lời bằng chính ý trên — AI ước lượng, không tối ưu; sơ đồ nhỏ thì không sao, sơ đồ khổng lồ thì chia nhỏ theo domain
-- Câu dẫn: *"Không có tool nào thắng tất cả — quan trọng là đúng việc. Nói thẳng giới hạn để mọi người chọn đúng."*
-- Slide này giúp bạn ghi điểm khách quan trước Q&A
+- Hai giới hạn: sơ đồ rất lớn (AI ước lượng toạ độ, không auto-routing) · xuất ảnh tĩnh không chuyên
+- Chốt: *"Không có tool nào thắng tất cả — đúng việc là đủ."*
 
-### Slide 12 — Tổng kết (13:50 → 14:20)
+### Slide 12 — Tổng kết (13:35 → 14:05)
 
-Đọc chậm 4 dòng. Dòng cuối nhìn cả phòng: *"— chính là chúng ta."*
+Đọc chậm 4 dòng. Dòng cuối: *"— chính là chúng ta."*
 
 ### Slide 13 — Q&A
 
-Mở source repo slide cho ai muốn xem: `github.com/10knThanh/tech-sharing-effective-html`
+Source slide: `github.com/10knThanh/tech-sharing-effective-html`  
+Demo: `SharingPresent/simple-auth-demo` · branch `demo-final` có đủ diagram kể cả payment.
 
 ---
 
-## 🖥️ Script live demo (7:45 → 11:30)
+## 🖥️ Script live demo — SimpleAuth (7:45 → 11:15)
 
 ### Bước 0 — Cho xem app (30s)
 
@@ -110,7 +110,7 @@ Mở source repo slide cho ai muốn xem: `github.com/10knThanh/tech-sharing-eff
 cd ~/Projects/SharingPresent/simple-auth-demo && npm run dev
 ```
 
-Register → Login → Dashboard. Nói: *"Project web bình thường — và chưa có một diagram nào. `ls docs` — not found."*
+Register → Login → Dashboard. Nói: *"Project web auth bình thường — chưa có một diagram nào. `ls docs` — not found."*
 
 ### Bước 1 — Cài skill (30s)
 
@@ -118,7 +118,7 @@ Register → Login → Dashboard. Nói: *"Project web bình thường — và ch
 npx skills add plannotator/effective-html --skill html-diagram -y
 ```
 
-### Bước 2 — Prompt sinh diagram (90s)
+### Bước 2 — Sinh architecture (≈60–90s)
 
 Prompt 1 (copy từ README):
 
@@ -128,19 +128,27 @@ Put it in docs/architecture/overview.html with a shared stylesheet
 at docs/assets/diagram.css.
 ```
 
-Trong lúc AI chạy → kể tiếp chuyện, đừng nhìn màn hình chờ. Xong → mở file → **diagram hiện ra**.
+Trong lúc AI chạy → kể tiếp chuyện. Xong → mở file / `npm run docs` → **overview hiện ra**.
 
-### Bước 3 — PO đổi yêu cầu (90s)
+*(Nếu dư thời gian: prompt 2–3 sinh register + login sequence.)*
 
-Nói: *"Giờ PO xuất hiện: 'cần thêm Forgot Password'. Tôi không mở Draw.io."*
+### Bước 3 — PO đổi yêu cầu: Payment (≈90s) ⭐
+
+Nói: *"PO: 'Sau login cần thanh toán'. Tôi không mở Draw.io."*
+
+Prompt 7 (copy từ README):
 
 ```
-Create a sequence diagram for forgot password flow
-in docs/sequence/forgot-password.html.
-Include: User, Frontend, Auth Service, Email Service, Database.
+Create a sequence diagram for payment / checkout flow in docs/sequence/payment.html,
+reusing docs/assets/diagram.css. Include: User, Frontend, Auth Service,
+Payment Service, Payment Gateway, Database. Mark new elements with class "new".
+Then update docs/architecture/overview.html to add a Payment Service node
+(class "new") and link it from docs/index.html.
 ```
 
-Refresh → done. (Nếu dư thời gian, chạy thêm prompt MFA.)
+Refresh hub docs → card **Payment flow** + node Payment Service trên architecture.
+
+*(Fallback ngắn nếu thiếu giờ: chỉ chạy forgot-password — prompt 4 — rồi chuyển nhanh sang payment bằng checkout `demo-final`.)*
 
 ### Bước 4 — Chốt bằng git (30s)
 
@@ -148,14 +156,14 @@ Refresh → done. (Nếu dư thời gian, chạy thêm prompt MFA.)
 git add docs && git diff --staged --stat
 ```
 
-Nói: *"Diagram cũng chỉ là source code. Review qua PR như mọi thay đổi khác — đúng quy trình slide Tích hợp vừa chiếu."*
-→ quay lại slide: bản đồ 3 bước (nếu cần) → **ngay sang slide highlight multi-flow**.
+Nói: *"Diagram cũng chỉ là source code — đúng cây thư mục slide Tích hợp vừa chiếu."*
+→ quay lại slide bản đồ 3 bước (nếu cần) → **ngay sang highlight Login / Forgot / Payment**.
 
 ### 🛟 Fallback nếu AI chậm/lỗi
 
 ```bash
-git checkout demo-diagrams -- docs   # = kết quả prompt 1–3
-git checkout demo-final -- docs      # = kết quả prompt 4–6 (forgot + MFA + email verification)
+git checkout demo-diagrams -- docs   # = kết quả prompt 1–3 (architecture + register + login)
+git checkout demo-final -- docs      # = đủ diagram: forgot + MFA + email verify + payment
 ```
 
 Refresh browser — diagram hiện ra, `git diff` cuối buổi vẫn diễn như thật.
@@ -168,9 +176,10 @@ Nói tỉnh bơ: *"Mình dùng bản đã sinh sẵn ở nhà cho nhanh — prom
 | Câu hỏi | Trả lời gọn |
 |---|---|
 | "Diagram lớn thì HTML có rối không?" | Có shared CSS + component nên file diagram rất mỏng; đọc thì đã có flow highlight; và người viết chính là AI. |
-| "Sao không dùng Mermaid luôn?" | Dùng song song! Mermaid cho flowchart nhỏ trong README. Effective HTML khi cần custom, interactive, nhiều flow chồng chéo. |
+| "Sao không dùng Mermaid luôn?" | Dùng song song! Mermaid cho flowchart nhỏ trong README. Effective HTML khi cần custom, interactive, nhiều flow chồng chéo (như login + forgot + payment trên cùng một sơ đồ). |
 | "Người không biết HTML/CSS thì sao?" | Không cần biết — prompt là đủ. Người review chỉ đọc diff như đọc code. |
 | "Diagram có tự sync với code không?" | Không tự động — nhưng nằm cùng repo nên đưa vào Definition of Done: đổi kiến trúc thì PR phải kèm cập nhật diagram, reviewer chặn được ngay. |
+| "App demo có thanh toán thật không?" | Không — SimpleAuth fake auth bằng localStorage. Payment chỉ sống trong `docs/` để chứng minh diagram-as-code; giống MFA/email verification cũng chỉ có trên diagram. |
 | "Có tốn thêm chi phí gì không?" | Skill là open source (MIT). AI assistant thì team đang dùng sẵn rồi. |
 
 ## 🎯 Một câu mang về
