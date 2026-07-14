@@ -67,7 +67,8 @@ và là **phao cứu sinh** nếu demo thật trục trặc — quay lại slide
 
 ### Slide 9 — Giới hạn (12:00 → 12:30)
 
-- Nói thẳng 2 giới hạn: **không có auto-layout/auto-routing** (sơ đồ vài chục node thì Draw.io kéo thả vẫn nhanh hơn) và **xuất ảnh tĩnh không chuyên** (dán Confluence/slide cho non-engineer vẫn là đất của Draw.io/Excalidraw)
+- Nói thẳng 2 giới hạn: **sơ đồ rất lớn** (AI lo bố cục cho diagram cỡ tài liệu, nhưng vài chục node chằng chịt thì AI ước lượng toạ độ chứ không phải engine auto-routing — mỗi lần chỉnh là một vòng prompt) và **xuất ảnh tĩnh không chuyên** (dán Confluence/slide cho non-engineer vẫn là đất của Draw.io/Excalidraw)
+- Nếu bị hỏi "AI lo layout rồi thì sao còn là giới hạn?": trả lời bằng chính ý trên — AI ước lượng, không tối ưu; sơ đồ nhỏ thì không sao, sơ đồ khổng lồ thì chia nhỏ theo domain
 - Câu dẫn: *"Không có tool nào thắng tất cả — quan trọng là đúng việc. Nói thẳng giới hạn để mọi người chọn đúng."*
 - Slide này giúp bạn ghi điểm khách quan trước Q&A
 
