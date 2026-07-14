@@ -256,17 +256,17 @@
 <!-- ════════ 1. Title ════════ -->
 <section class="slide" id="s1">
   <div class="slide-inner">
-    <div class="eyebrow">Tech sharing · 15 min · 07/07/2026 · ThanhND</div>
+    <div class="eyebrow">Tech sharing · 15 phút · 07/07/2026 · ThanhND</div>
     <h1>Effective HTML</h1>
-    <p class="subtitle" style="font-family:var(--serif); font-size:24px; margin-bottom:16px">A new way to build technical diagrams</p>
-    <p class="subtitle">Diagram as Code for modern development teams — dành cho Software / Mobile / Backend Engineer, Tech Lead và DevOps.</p>
+    <p class="subtitle" style="font-family:var(--serif); font-size:24px; margin-bottom:16px">Một cách mới để xây dựng diagram kỹ thuật</p>
+    <p class="subtitle">Diagram as Code cho team phát triển hiện đại — dành cho Software / Mobile / Backend Engineer, Tech Lead và DevOps.</p>
   </div>
 </section>
 
 <!-- ════════ 1b. Warm-up ════════ -->
 <section class="slide" id="s-warmup">
   <div class="slide-inner">
-    <div class="eyebrow">Warm-up · hỏi nhanh cả nhà</div>
+    <div class="eyebrow">Khởi động · hỏi nhanh cả nhà</div>
     <h2>Trước khi bắt đầu…</h2>
     <div class="qh">Câu 1</div>
     <p class="quote" style="margin-top:0; margin-bottom:48px">Bạn có hay vẽ diagram khi làm việc không?</p>
@@ -288,17 +288,17 @@
 <!-- ════════ 2. Agenda ════════ -->
 <section class="slide" id="s2">
   <div class="slide-inner">
-    <div class="eyebrow">Agenda</div>
+    <div class="eyebrow">Nội dung</div>
     <h2>8 phần · 15 phút</h2>
     <ul class="agenda">
-      <li><span>1 · Warm-up — mọi người đang vẽ diagram thế nào?</span><span>2'</span></li>
-      <li><span>2 · Why do we need a new way to build diagrams?</span><span>2'</span></li>
-      <li><span>3 · What is Effective HTML?</span><span>2'</span></li>
+      <li><span>1 · Khởi động — mọi người đang vẽ diagram thế nào?</span><span>2'</span></li>
+      <li><span>2 · Vì sao cần một cách vẽ diagram mới?</span><span>2'</span></li>
+      <li><span>3 · Effective HTML là gì?</span><span>2'</span></li>
       <li><span>4 · AI + Effective HTML</span><span>2'</span></li>
-      <li><span>5 · Live demo</span><span>4'</span></li>
-      <li><span>6 · Comparison with other tools</span><span>1'</span></li>
-      <li><span>7 · Integration into real projects</span><span>1'</span></li>
-      <li><span>8 · Takeaways &amp; Q&amp;A</span><span>1'</span></li>
+      <li><span>5 · Demo trực tiếp</span><span>4'</span></li>
+      <li><span>6 · So sánh &amp; giới hạn</span><span>1'</span></li>
+      <li><span>7 · Tích hợp vào project thực tế</span><span>1'</span></li>
+      <li><span>8 · Tổng kết &amp; hỏi đáp</span><span>1'</span></li>
     </ul>
   </div>
 </section>
@@ -306,8 +306,8 @@
 <!-- ════════ 3. Why ════════ -->
 <section class="slide" id="s3">
   <div class="slide-inner">
-    <div class="eyebrow">1 · Why</div>
-    <h2>The problem with traditional diagrams</h2>
+    <div class="eyebrow">1 · Vì sao</div>
+    <h2>Vấn đề của diagram truyền thống</h2>
     <div class="pills" style="margin-bottom:30px">
       <span class="pill">Draw.io</span>
       <span class="pill">Figma</span>
@@ -344,8 +344,8 @@
 <!-- ════════ 4. What is Effective HTML ════════ -->
 <section class="slide" id="s4">
   <div class="slide-inner">
-    <div class="eyebrow">2 · What</div>
-    <h2>What is Effective HTML?</h2>
+    <div class="eyebrow">2 · Khái niệm</div>
+    <h2>Effective HTML là gì?</h2>
     <p class="subtitle" style="margin-bottom:30px">
       Một cách xây dựng diagram bằng <strong>HTML + CSS + component</strong> — thay vì kéo thả.
       Node là thẻ div, layout là CSS, diagram là DOM.
@@ -366,12 +366,12 @@
       </div>
     </div>
     <div class="pills" style="margin-top:32px">
-      <span class="pill ok">Version control</span>
-      <span class="pill ok">Git friendly</span>
-      <span class="pill ok">Easy review</span>
-      <span class="pill ok">Reusable</span>
-      <span class="pill ok">Customizable</span>
-      <span class="pill ok">Flow highlight</span>
+      <span class="pill ok">Quản lý phiên bản bằng Git</span>
+      <span class="pill ok">Diff từng dòng</span>
+      <span class="pill ok">Review trên PR</span>
+      <span class="pill ok">Tái sử dụng component</span>
+      <span class="pill ok">Tuỳ biến không giới hạn</span>
+      <span class="pill ok">Highlight từng flow</span>
     </div>
     <div class="footnote">github.com/plannotator/effective-html — MIT license. Chính bộ slide này là một file Effective HTML.</div>
   </div>
@@ -418,11 +418,11 @@ npx skills add plannotator/effective-html <span class="tag">\</span>
 <!-- ════════ 6. Live demo ════════ -->
 <section class="slide wide" id="s6">
   <div class="slide-inner">
-    <div class="eyebrow">4 · Live demo · kịch bản 3 bước</div>
+    <div class="eyebrow">4 · Demo trực tiếp · kịch bản 3 bước</div>
     <h2>Prompt → diagram → git diff</h2>
     <div class="chips" id="demochips">
-      <button class="chip on" data-s="gen">1 · Generate login flow</button>
-      <button class="chip" data-s="redis">2 · Add Redis Cache</button>
+      <button class="chip on" data-s="gen">1 · Sinh login flow</button>
+      <button class="chip" data-s="redis">2 · Thêm Redis Cache</button>
       <button class="chip" data-s="diff">3 · git diff</button>
     </div>
     <div class="demo-pair">
@@ -438,28 +438,54 @@ npx skills add plannotator/effective-html <span class="tag">\</span>
 <!-- ════════ 7. Comparison ════════ -->
 <section class="slide wide" id="s7">
   <div class="slide-inner">
-    <div class="eyebrow">5 · Comparison</div>
-    <h2>Effective HTML vs. the rest</h2>
+    <div class="eyebrow">5 · So sánh</div>
+    <h2>Effective HTML và các công cụ khác</h2>
     <div class="cmp-wrap">
       <table class="cmp">
         <thead>
           <tr><th></th><th class="hl">Effective HTML</th><th>Draw.io</th><th>Mermaid</th><th>Excalidraw</th></tr>
         </thead>
         <tbody>
-          <tr><td>Code based</td><td class="hl yes">✓</td><td class="no">✕</td><td class="yes">✓</td><td class="no">✕</td></tr>
-          <tr><td>Git friendly</td><td class="hl yes">✓</td><td class="no">✕</td><td class="yes">✓</td><td class="no">✕</td></tr>
-          <tr><td>PR review</td><td class="hl yes">✓</td><td class="no">✕</td><td class="yes">✓</td><td class="no">✕</td></tr>
-          <tr><td>AI generation</td><td class="hl yes">✓</td><td class="part">△</td><td class="yes">✓</td><td class="part">△</td></tr>
-          <tr><td>HTML/CSS custom</td><td class="hl yes">✓</td><td class="no">✕</td><td class="no">✕</td><td class="no">✕</td></tr>
-          <tr><td>Flow highlight</td><td class="hl yes">✓</td><td class="no">✕</td><td class="no">✕</td><td class="no">✕</td></tr>
-          <tr><td>Learning curve</td><td class="hl">Medium</td><td>Easy</td><td>Easy</td><td>Easy</td></tr>
+          <tr><td>Viết bằng code</td><td class="hl yes">✓</td><td class="no">✕</td><td class="yes">✓</td><td class="no">✕</td></tr>
+          <tr><td>Thân thiện với Git</td><td class="hl yes">✓</td><td class="no">✕</td><td class="yes">✓</td><td class="no">✕</td></tr>
+          <tr><td>Review trên PR</td><td class="hl yes">✓</td><td class="no">✕</td><td class="yes">✓</td><td class="no">✕</td></tr>
+          <tr><td>AI sinh diagram</td><td class="hl yes">✓</td><td class="part">△</td><td class="yes">✓</td><td class="part">△</td></tr>
+          <tr><td>Tuỳ biến HTML/CSS</td><td class="hl yes">✓</td><td class="no">✕</td><td class="no">✕</td><td class="no">✕</td></tr>
+          <tr><td>Highlight flow</td><td class="hl yes">✓</td><td class="no">✕</td><td class="no">✕</td><td class="no">✕</td></tr>
+          <tr><td>Xuất PNG / PDF</td><td class="hl part">△</td><td class="yes">✓</td><td class="yes">✓</td><td class="yes">✓</td></tr>
+          <tr><td>Độ khó học</td><td class="hl">Trung bình</td><td>Dễ</td><td>Dễ</td><td>Dễ</td></tr>
         </tbody>
       </table>
       <ul class="sum-list">
-        <li><div class="st">Draw.io</div><div class="sd">Great for business users</div></li>
-        <li><div class="st">Mermaid</div><div class="sd">Great for simple flowcharts</div></li>
-        <li><div class="st">Effective HTML</div><div class="sd">Great for engineering documentation</div></li>
+        <li><div class="st">Draw.io</div><div class="sd">Mạnh cho business user, vẽ nhanh kéo thả</div></li>
+        <li><div class="st">Mermaid</div><div class="sd">Mạnh cho flowchart đơn giản trong README</div></li>
+        <li><div class="st">Effective HTML</div><div class="sd">Mạnh cho tài liệu kỹ thuật của engineer</div></li>
       </ul>
+    </div>
+    <div class="footnote">✓ tốt · △ làm được nhưng không chuyên · ✕ không hỗ trợ</div>
+  </div>
+</section>
+
+<!-- ════════ 8b. Giới hạn ════════ -->
+<section class="slide" id="s8b">
+  <div class="slide-inner">
+    <div class="eyebrow">5 · So sánh (tiếp) · nói thẳng</div>
+    <h2>Giới hạn của Effective HTML</h2>
+    <ul class="prob-list">
+      <li class="prob-item">
+        <span class="prob-dot"></span>
+        <div><div class="prob-title">Không có auto-layout / auto-routing</div>
+        <div class="prob-desc">Node và đường nối phải tự bố trí bằng CSS. Sơ đồ vài chục node, đường nối chồng chéo dày đặc thì Draw.io kéo thả vẫn nhanh và gọn hơn.</div></div>
+      </li>
+      <li class="prob-item">
+        <span class="prob-dot"></span>
+        <div><div class="prob-title">Xuất ảnh tĩnh không chuyên</div>
+        <div class="prob-desc">Cần PNG/PDF để dán vào Confluence hay slide cho non-engineer thì phải in trang hoặc chụp màn hình — Draw.io, Excalidraw làm việc này tốt hơn hẳn.</div></div>
+      </li>
+    </ul>
+    <div class="footnote">
+      Cách giảm đau: để AI đảm nhận phần bố trí toạ độ · chia sơ đồ lớn thành nhiều diagram nhỏ theo domain ·
+      việc cần kéo thả nhanh hay xuất ảnh thì Draw.io vẫn ở đó — đúng việc của nó.
     </div>
   </div>
 </section>
@@ -467,7 +493,7 @@ npx skills add plannotator/effective-html <span class="tag">\</span>
 <!-- ════════ 9. Integration ════════ -->
 <section class="slide wide" id="s9">
   <div class="slide-inner">
-    <div class="eyebrow">6 · Integration into projects</div>
+    <div class="eyebrow">6 · Tích hợp vào project</div>
     <h2>Diagram đi cùng phiên bản của source code</h2>
     <div class="int-grid">
       <div>
@@ -489,13 +515,13 @@ npx skills add plannotator/effective-html <span class="tag">\</span>
         </div>
       </div>
       <div>
-        <h3>Workflow</h3>
+        <h3>Quy trình</h3>
         <div class="ci-chain">
           <div class="ci-step">Developer</div>
           <div class="farrow"></div>
-          <div class="ci-step">Update code</div>
+          <div class="ci-step">Sửa code</div>
           <div class="farrow"></div>
-          <div class="ci-step hot">Update diagram</div>
+          <div class="ci-step hot">Sửa diagram</div>
           <div class="farrow"></div>
           <div class="ci-step">Pull request</div>
           <div class="farrow"></div>
@@ -511,7 +537,7 @@ npx skills add plannotator/effective-html <span class="tag">\</span>
 <!-- ════════ 10. Real examples: 1 diagram, nhiều flow chồng chéo ════════ -->
 <section class="slide wide" id="s10">
   <div class="slide-inner">
-    <div class="eyebrow">Real examples · điểm ăn tiền: flow highlight</div>
+    <div class="eyebrow">Ví dụ thực tế · điểm ăn tiền: highlight flow</div>
     <h2>Một diagram — ba flow chồng chéo</h2>
     <div class="chips" id="flowchips">
       <button class="chip on" data-f="all">Toàn cảnh</button>
@@ -590,7 +616,7 @@ npx skills add plannotator/effective-html <span class="tag">\</span>
 <!-- ════════ 11. Takeaways ════════ -->
 <section class="slide" id="s11">
   <div class="slide-inner">
-    <div class="eyebrow">7 · Key takeaways</div>
+    <div class="eyebrow">7 · Tổng kết</div>
     <h2>Bốn điều mang về</h2>
     <ul class="next-list">
       <li>Diagram cũng nên được quản lý như source code.</li>
@@ -605,15 +631,15 @@ npx skills add plannotator/effective-html <span class="tag">\</span>
 <section class="slide" id="s12">
   <div class="slide-inner" style="text-align:center">
     <h1 style="margin-bottom:24px">Q&amp;A</h1>
-    <p class="subtitle" style="margin:0 auto">Thank you!</p>
+    <p class="subtitle" style="margin:0 auto">Cảm ơn mọi người đã lắng nghe!</p>
     <div class="footnote">
       github.com/plannotator/effective-html · source bộ slide: SharingPresent/html-diagram/index.html<br>
-      demo live coding: html-diagram/demo/login-flow.html
+      project demo: SimpleAuth — SharingPresent/simple-auth-demo (branch demo-final chứa đủ 4 diagram)
     </div>
   </div>
 </section>
 
-<div id="counter">1 / 12</div>
+<div id="counter">1 / 13</div>
 
 <script>
   (function () {
@@ -730,7 +756,7 @@ npx skills add plannotator/effective-html <span class="tag">\</span>
         cap: 'Refund flow: nhánh Notification của riêng nó, Database dùng chung với hai flow kia — một sơ đồ, nhiều góc nhìn.'
       }
     };
-    const CAP_ALL = 'Một diagram duy nhất chứa cả ba flow, các đường chồng chéo nhau — đây là lúc tool kéo thả bó tay. Bấm từng chip: chỉ vài dòng CSS (dim + highlight + animation) làm được điều này.';
+    const CAP_ALL = 'Một diagram duy nhất chứa cả ba flow, các đường chồng chéo nhau. Bấm từng chip — làm mờ + làm sáng + animation chỉ bằng vài dòng CSS, điều mà ảnh tĩnh xuất từ tool kéo thả không làm được.';
 
     function setFlow(name) {
       chips.forEach(c => c.classList.toggle('on', c.dataset.f === name));

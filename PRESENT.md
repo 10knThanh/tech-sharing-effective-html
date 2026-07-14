@@ -27,7 +27,7 @@
 
 Nói: *"Hôm nay mình chia sẻ một cách làm diagram mà không cần kéo thả — viết diagram bằng code, sống trong repo, review qua PR như code."*
 
-### Slide 2 — Warm-up (0:30 → 2:30)
+### Slide 2 — Khởi động (0:30 → 2:30)
 
 - Hỏi câu 1: **"Ai ở đây có vẽ diagram khi làm việc? Giơ tay."** — đợi 3 giây, đếm miệng
 - Hỏi câu 2: **"Mọi người đang vẽ bằng gì?"** — chỉ vào từng pill, hỏi "ai dùng Draw.io?", "ai dùng PowerPoint?"
@@ -60,17 +60,23 @@ Lướt nhanh, chỉ nói: *"15 phút, phần dài nhất là live demo."*
 Slide 7 (Prompt → diagram → git diff) dùng làm **bản đồ 3 bước** trước khi rời slide,
 và là **phao cứu sinh** nếu demo thật trục trặc — quay lại slide, bấm 3 chip kể chuyện.
 
-### Slide 8 — Comparison (11:15 → 12:15)
+### Slide 8 — So sánh (11:15 → 12:00)
 
-- Đừng đọc cả bảng — chỉ vào 2 hàng: **PR review** và **Flow highlight** (hàng duy nhất chỉ Effective HTML có ✓)
+- Đừng đọc cả bảng — chỉ vào 3 hàng: **Review trên PR**, **Highlight flow** (chỉ Effective HTML có ✓) và **Xuất PNG/PDF** (hàng duy nhất Effective HTML thua — dẫn sang slide sau)
 - Summary bên phải: *"Không phải thay thế tất cả — Draw.io cho business, Mermaid cho flowchart nhỏ, Effective HTML cho tài liệu kỹ thuật."*
 
-### Slide 9 — Integration (12:15 → 13:00)
+### Slide 9 — Giới hạn (12:00 → 12:30)
+
+- Nói thẳng 2 giới hạn: **không có auto-layout/auto-routing** (sơ đồ vài chục node thì Draw.io kéo thả vẫn nhanh hơn) và **xuất ảnh tĩnh không chuyên** (dán Confluence/slide cho non-engineer vẫn là đất của Draw.io/Excalidraw)
+- Câu dẫn: *"Không có tool nào thắng tất cả — quan trọng là đúng việc. Nói thẳng giới hạn để mọi người chọn đúng."*
+- Slide này giúp bạn ghi điểm khách quan trước Q&A
+
+### Slide 10 — Tích hợp (12:30 → 13:00)
 
 - Chỉ cây thư mục: *"diagram nằm cạnh code, đi cùng commit"*
 - Chỉ workflow: *"bước 'update diagram' nằm ngay trong luồng làm việc, không phải việc làm thêm cuối sprint"*
 
-### Slide 10 — Real examples · Flow highlight (13:00 → 14:15) ⭐
+### Slide 11 — Ví dụ thực tế · highlight flow (13:00 → 14:15) ⭐
 
 **Điểm ăn tiền — thao tác chậm thôi:**
 1. Để "Toàn cảnh": *"Một diagram, ba flow chồng chéo — chỗ này tool kéo thả bó tay."*
@@ -79,11 +85,11 @@ và là **phao cứu sinh** nếu demo thật trục trặc — quay lại slide
 4. Bấm **Mall refund flow** → *"nhánh Notification của riêng nó."*
 5. Chốt: *"Tất cả chỉ là vài dòng CSS."*
 
-### Slide 11 — Takeaways (14:15 → 14:45)
+### Slide 12 — Tổng kết (14:15 → 14:45)
 
 Đọc chậm 4 dòng. Dòng cuối nhìn cả phòng: *"— chính là chúng ta."*
 
-### Slide 12 — Q&A
+### Slide 13 — Q&A
 
 Mở source repo slide cho ai muốn xem: `github.com/10knThanh/tech-sharing-effective-html`
 
