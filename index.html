@@ -49,8 +49,13 @@
     display: flex; align-items: center; justify-content: center;
     padding: 6vh 6vw;
   }
-  .slide-inner { width: 100%; max-width: 820px; }
-  .slide.wide .slide-inner { max-width: 1140px; }
+  .slide-inner { width: 100%; max-width: 860px; }
+  .slide.wide .slide-inner { max-width: 1180px; }
+
+  /* Phóng to toàn bộ slide khi chiếu màn hình lớn (TV / máy chiếu).
+     Chỉnh số zoom ở đây nếu muốn to/nhỏ hơn. */
+  @media (min-width: 1600px) { .slide-inner { zoom: 1.28; } }
+  @media (min-width: 2400px) { .slide-inner { zoom: 1.65; } }
 
   /* ── typography ──────────────────────────── */
   .eyebrow {

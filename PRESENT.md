@@ -6,9 +6,19 @@
 
 ---
 
+## 🖥️ Trình chiếu toàn màn hình
+
+- **Fullscreen:** mở link slide trên trình duyệt → nhấn `F11` (Windows/Linux) hoặc `⌃⌘F` (Chrome/Safari trên Mac). Nhấn lại / `Esc` để thoát.
+- **Chuyển slide:** `→` `↓` `Space` (tiến) · `←` `↑` (lùi) · hoặc cuộn chuột. Góc phải dưới có số trang.
+- **Cỡ chữ trên TV/máy chiếu:** slide **tự phóng to** theo màn hình — màn ≥1600px (Full HD) phóng 1.28×, màn ≥2400px (4K) phóng 1.65×. Chiếu 65" là chữ đã to sẵn.
+- Muốn to/nhỏ thêm: nhấn `⌃/⌘ +` và `⌃/⌘ -` ngay trên trình duyệt (zoom cả trang). Hoặc chỉnh 2 số trong `index.html` (tìm `zoom: 1.28`).
+
+---
+
 ## ✅ Checklist 30 phút trước giờ G
 
 - [ ] Mở link slide, nhấn `F11` fullscreen — thử phím `↓` chuyển slide, nút `Theme` chọn sáng/tối hợp phòng
+- [ ] Chiếu thử lên đúng màn hình 65" — kiểm tra chữ đủ to từ cuối phòng (chưa đủ thì `⌘/⌃ +`)
 - [ ] Refresh slide một lần (các chip tương tác về trạng thái mặc định)
 - [ ] Terminal: `cd ~/Projects/SharingPresent/simple-auth-demo`
 - [ ] `git status` sạch, đang ở `main`, **không có thư mục docs/** (nếu có: `git checkout main -- . && rm -rf docs`)
