@@ -173,14 +173,45 @@ Nói tỉnh bơ: *"Mình dùng bản đã sinh sẵn ở nhà cho nhanh — prom
 
 ## ❓ Q&A dự kiến
 
-| Câu hỏi | Trả lời gọn |
-|---|---|
-| "Diagram lớn thì HTML có rối không?" | Có shared CSS + component nên file diagram rất mỏng; đọc thì đã có flow highlight; và người viết chính là AI. |
-| "Sao không dùng Mermaid luôn?" | Dùng song song! Mermaid cho flowchart nhỏ trong README. Effective HTML khi cần custom, interactive, nhiều flow chồng chéo (như login + forgot + payment trên cùng một sơ đồ). |
-| "Người không biết HTML/CSS thì sao?" | Không cần biết — prompt là đủ. Người review chỉ đọc diff như đọc code. |
-| "Diagram có tự sync với code không?" | Không tự động — nhưng nằm cùng repo nên đưa vào Definition of Done: đổi kiến trúc thì PR phải kèm cập nhật diagram, reviewer chặn được ngay. |
-| "App demo có thanh toán thật không?" | Không — SimpleAuth fake auth bằng localStorage. Payment chỉ sống trong `docs/` để chứng minh diagram-as-code; giống MFA/email verification cũng chỉ có trên diagram. |
-| "Có tốn thêm chi phí gì không?" | Skill là open source (MIT). AI assistant thì team đang dùng sẵn rồi. |
+### So sánh công cụ
+
+- **"Sao không dùng Mermaid luôn?"** — Dùng song song! Mermaid cho flowchart nhỏ trong README (nhanh, cú pháp gọn). Effective HTML khi cần custom layout, interactive, nhiều flow chồng chéo (login + forgot + payment trên cùng một sơ đồ), hoặc diagram là tài liệu chính của hệ thống.
+- **"Mermaid cũng là code, cũng diff/review được mà?"** — Đúng, và đó là lý do Mermaid ở chiếu trên Draw.io. Khác biệt: Mermaid bị giới hạn theme + engine tự bố cục; Effective HTML là HTML/CSS thuần nên tuỳ biến vô hạn, thêm được hover/animation/highlight flow — thứ Mermaid không làm được.
+- **"PlantUML / D2 / Structurizr thì sao?"** — Cùng triết lý diagram-as-code, đều tốt. Điểm khác của Effective HTML: không cần cài renderer riêng (chỉ browser), và AI sinh cực nhanh vì HTML/CSS là thứ mọi LLM thạo nhất.
+- **"Draw.io cũng lưu được dạng XML trong Git mà?"** — Lưu được, nhưng XML kéo thả không đọc được bằng mắt khi review; đổi 1 node là cả chục dòng toạ độ thay đổi. Diff vô nghĩa với reviewer.
+
+### Quy trình & tích hợp
+
+- **"Diagram có tự sync với code không?"** — Không tự động. Nhưng nằm cùng repo nên đưa được vào Definition of Done: đổi kiến trúc thì PR phải kèm cập nhật diagram, reviewer chặn ngay nếu thiếu. Kỷ luật quy trình, không phải magic.
+- **"Ai chịu trách nhiệm cập nhật diagram?"** — Chính người sửa code trong PR đó — vì giờ chỉ là sửa vài dòng + prompt, chi phí thấp nên không đùn đẩy. Trước đây tách rời tool nên "để sau" rồi quên.
+- **"Làm sao đưa vào CI/CD?"** — Diagram là file tĩnh: GitHub Action build → deploy GitHub Pages/GitLab Pages → team mở URL. Không cần bước render phức tạp.
+- **"Non-engineer (PO/BA) xem thế nào?"** — Deploy Pages ra URL để xem trên browser; hoặc xuất PNG/PDF dán Confluence (đây là điểm Draw.io mạnh hơn — đã nói ở slide Giới hạn).
+
+### Về AI
+
+- **"AI vẽ sai kiến trúc thì sao?"** — AI sinh bản nháp, người **review và sửa** như review code do junior viết. Không phải "AI thay người", mà "AI làm phần vất vả, người kiểm chứng".
+- **"Không có AI thì có dùng được không?"** — Được, vẫn viết tay HTML/CSS như mọi component. AI chỉ giúp nhanh hơn, không phải điều kiện bắt buộc.
+- **"Prompt mỗi lần ra layout khác nhau, khó kiểm soát?"** — Có shared `diagram.css` + convention class (`node`, `svc`, `data`, `new`) nên kết quả nhất quán. Prompt càng cụ thể (chỉ định file, class) càng ổn định — xem các prompt mẫu trong README.
+- **"Tốn token/chi phí AI không?"** — Diagram nhỏ nên rẻ; và team đang dùng AI assistant sẵn rồi.
+
+### Kỹ thuật & giới hạn
+
+- **"Diagram lớn (vài chục node) thì HTML có rối không?"** — Đây là giới hạn thật (slide 10): AI ước lượng toạ độ chứ không auto-routing như Draw.io. Cách xử lý: chia nhỏ theo domain, mỗi diagram một câu chuyện.
+- **"File diagram có bị phình to không?"** — Không — shared CSS tách riêng, mỗi file chỉ còn cấu trúc node/arrow, rất mỏng. Đó cũng là lý do diff sạch.
+- **"Có làm được sequence/ERD/state diagram không?"** — Được hết, đều là HTML/CSS. Demo có architecture + sequence (register/login/forgot/payment). ERD, deployment, network… chỉ là prompt khác.
+- **"Responsive / in ấn thì sao?"** — Responsive tốt (CSS flex/grid). In ra PDF được nhưng không "pixel-perfect" như tool chuyên xuất ảnh.
+
+### Áp dụng cho team
+
+- **"Người không biết HTML/CSS dùng được không?"** — Người **tạo** chỉ cần prompt. Người **review** chỉ đọc diff như đọc code. Không ai phải học layout thủ công.
+- **"Bắt đầu từ đâu cho nhẹ?"** — Tuần này chọn 1 module đang làm, vẽ 1 diagram bằng Effective HTML đặt trong `docs/`. Thấy hợp thì mở rộng dần, đưa vào DoD.
+- **"Có cần bỏ hết Draw.io/Figma không?"** — Không. Draw.io cho brainstorm/business, Figma cho design, Mermaid cho flowchart nhỏ. Effective HTML cho tài liệu kỹ thuật sống trong repo.
+
+### Bảo mật & chi phí
+
+- **"App demo có thanh toán thật không?"** — Không — SimpleAuth fake auth bằng localStorage. Payment/MFA/email verification chỉ sống trong `docs/` để minh hoạ diagram-as-code, không có backend thật.
+- **"Có tốn thêm chi phí license không?"** — Skill open source (MIT). Không có license phải mua.
+- **"Diagram deploy Pages có lộ kiến trúc nội bộ không?"** — Dùng private repo / GitLab Pages nội bộ / chỉ xem local. Giống như source code — phân quyền theo repo.
 
 ## 🎯 Một câu mang về
 
