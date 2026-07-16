@@ -352,19 +352,21 @@
       Một cách xây dựng diagram bằng <strong>HTML + CSS + component</strong> — thay vì kéo thả.
       Node là thẻ div, layout là CSS, diagram là DOM.
     </p>
-    <div class="demo-pair">
-      <pre class="code"><span class="cm">&lt;!-- diagram = code --&gt;</span>
+    <div class="demo-pair" style="align-items:center">
+      <pre class="code"><span class="cm">&lt;!-- code bên trái = diagram bên phải --&gt;</span>
 &lt;div class=<span class="tag">"flow"</span>&gt;
-  &lt;div class=<span class="tag">"node"</span>&gt;User&lt;/div&gt;
-  &lt;div class=<span class="tag">"arrow"</span>&gt;&lt;/div&gt;
-  &lt;div class=<span class="tag">"node"</span>&gt;Backend&lt;/div&gt;
+  &lt;div class=<span class="tag">"fnode"</span>&gt;HTML&lt;/div&gt;
+  &lt;div class=<span class="tag">"farrow"</span>&gt;&lt;/div&gt;
+  &lt;div class=<span class="tag">"fnode"</span>&gt;Render&lt;/div&gt;
+  &lt;div class=<span class="tag">"farrow"</span>&gt;&lt;/div&gt;
+  &lt;div class=<span class="tag">"fnode new"</span>&gt;Diagram&lt;/div&gt;
 &lt;/div&gt;</pre>
-      <div class="ci-chain" style="padding-top:4px">
-        <div class="ci-step">HTML</div>
+      <div class="flow" style="padding-top:4px">
+        <div class="fnode">HTML</div>
         <div class="farrow"></div>
-        <div class="ci-step">Render</div>
+        <div class="fnode">Render</div>
         <div class="farrow"></div>
-        <div class="ci-step hot">Diagram</div>
+        <div class="fnode new">Diagram</div>
       </div>
     </div>
     <div class="pills" style="margin-top:32px">
